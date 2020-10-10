@@ -145,41 +145,45 @@
 #
 # a = int(input())
 # b = int(input())
-# # c1 = math.sqrt((math.pow(a, 2) + math.pow(b, 2)))  # 斜边
-# max = a if a >= b else b
+# max = a if a > b else b
 # min = a if a < b else b
-# # c2 = math.sqrt((math.pow(max, 2) - math.pow(min, 2)))
-# #
-# # if c1 < (a + b) and a < (b + c1) and b < (a + c1):
-# #     print("c")
-# # else:
-# #     print("non")
-# #
-# # if a < (b + c2) and b < (a + c2) and c2 < (a + b):
-# #     if c2 > min:
-# #         print("b")
-# #     else:
-# #         print("a")
-# # else:
-# #    print("non")
 #
-# if max <= 0 or min <= 0:
-#     print("non")
+#
+# def isTriangle(a, b, c):  # 判断是否三角形
+#     if a + b > c and a + c > b and b + c > a and abs(a - b) < c and abs(a - c) < b and abs(c - b) < a:
+#         return True
+#     else:
+#         return False
+#
+#
+# condition1 = int(math.sqrt(math.pow(max, 2) - math.pow(min, 2)))  # 直角边
+# condition2 = int(math.sqrt(math.pow(max, 2) + math.pow(min, 2)))  # 斜边
+# if (isTriangle(min, max, condition2) and math.pow(min, 2) + math.pow(max, 2) == math.pow(condition2,
+#                                                                                          2) and condition2 > max):
+#     print("c")
+# elif isTriangle(min, max, condition1) and math.pow(min, 2) + math.pow(condition1, 2) == math.pow(max, 2):
+#     if condition1 < min:
+#         print("a")
+#     if max > condition1 > min:
+#         print("b")
 # else:
-#     for c in range(int(math.sqrt((math.pow(max, 2) - math.pow(min, 2)))),
-#                    int(math.sqrt((math.pow(max, 2) + math.pow(min, 2)))) + 1):
-#         if math.pow(c, 2) == math.pow(a, 2) + math.pow(b, 2):
-#             print("c")
-#         elif math.pow(a, 2) == math.pow(c, 2) + math.pow(b, 2):
-#             if c > b:
-#                 print("b")
-#             else:
-#                 print("a")
-#         elif math.pow(b, 2) == math.pow(a, 2) + math.pow(c, 2):
-#             if c > a:
-#                 print("a")
-#             else:
-#                 print("b")
+#     print("non")
+#
+#
+# def isTriangle(a, b, c):
+#     if a + b < c:
+#         return False
+#     if a + c < b:
+#         return False
+#     if b + c < a:
+#         return False
+#     if abs(a - b) > c:
+#         return False
+#     if abs(a - c) > b:
+#         return False
+#     if abs(c - b) > a:
+#         return False
+#     return True
 
 # # 18
 # import fractions
@@ -189,3 +193,67 @@
 # a = 10
 # num = fractions.Fraction(f, a)
 # print(num)
+
+
+# # 19
+# def rgb2hsv(R, G, B):
+#     R, G, B = R / 255.0, G / 255.0, B / 255.0  # R,G,B在 0 到 1 之间
+#     Max = max(R, G, B)  # 最大值
+#     Min = min(R, G, B)  # 最小值
+#     m = Max - Min
+#     V = Max
+#
+#     if V == 0:
+#         S = 0
+#     else:
+#         S = m / Max
+#
+#     if Max == Min:
+#         H = 0
+#     elif Max == R:
+#         H = ((G - B) / m) * 60
+#     elif Max == G:
+#         H = ((B - R) / m) * 60 + 120
+#     elif Max == B:
+#         H = ((R - G) / m) * 60 + 240
+#
+#     if H < 0:
+#         H = H + 360
+#
+#     return H, S, V
+#
+#
+# r = int(input())
+# g = int(input())
+# b = int(input())
+#
+# h, s, v = rgb2hsv(r, g, b)
+# print("%.4f" % h, "%.4f%%" % (s * 100), "%.4f%%" % (v * 100), sep=",")
+
+
+# 20
+# import math
+#
+#
+# def get_distance(L1, L2):
+#     lon1 = math.radians(float(L1[0]))
+#     lon2 = math.radians(float(L1[1]))  # 经度
+#     lat1 = math.radians(float(L2[0]))
+#     lat2 = math.radians(float(L2[1]))  # 纬度
+#     lo = lon1 - lon2
+#     la = lat1 - lat2
+#
+#     a = math.pow(math.sin(la / 2), 2) + math.cos(lat1) * math.cos(lat2) * math.pow(math.sin(lo / 2), 2)
+#     D = 2 * math.asin(math.sqrt(a)) * 6371
+#     return D
+#
+#
+# w1 = input()  # 西安纬度
+# j1 = input()  # 西安经度
+# w2 = input()  # 莫斯科纬度
+# j2 = input()  # 莫斯科经度
+#
+# l1 = [j1, j2]  # 经度集合
+# l2 = [w1, w2]  # 纬度集合
+# d = get_distance(l1, l2)
+# print("%.4fkm" % d)
