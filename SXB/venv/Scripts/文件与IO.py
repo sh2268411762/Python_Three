@@ -154,3 +154,4 @@ with open("readme.txt", "r") as f:
 # with open("student1.data.txt", "r") as f:
 #     stu7 = json.load(f)
 #     print(stu7)
+
