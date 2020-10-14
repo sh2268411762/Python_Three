@@ -202,12 +202,12 @@
 #     return count
 #
 #
-# def find(m):
-#     n = len_n(m)
-#     nums = n % 2 * list('018') or ['']
-#     while n > 1:
-#         n -= 2
-#         nums = [a + num1 + b for a, b in '00 11 88 69 90 96'.split()[n < 2:] for num1 in nums]
+#  def find(m):
+# #     n = len_n(m)
+# #     nums = n % 2 * list('018') or ['']
+# #     while n > 1:
+# #         n -= 2
+# #         nums = [a + num1+ b for a, b in '00 11 88 69 90 96'.split()[n < 2:] for num1 in nums]
 #     #        print(nums)
 #     if str(m) in nums:
 #         return print("Yes")
