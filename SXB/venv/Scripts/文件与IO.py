@@ -60,10 +60,10 @@
 # txt7 = f.read()
 # print(txt7)
 
-# with语句关闭文件
-with open("readme.txt", "r") as f:
-    txt8 = f.read()
-    print(txt8)
+# # with语句关闭文件
+# with open("readme.txt", "r") as f:
+#     txt8 = f.read()
+#     print(txt8)
 
 
 # # IO

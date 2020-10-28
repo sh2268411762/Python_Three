@@ -142,3 +142,171 @@
 # num = int(input())
 # r = Roman_Int(num)
 # print(r.to_Int())
+
+
+# # 86
+# # 圆类
+# import math
+#
+#
+# class Circle:
+#
+#     def __init__(self, _r):
+#         self.r = _r
+#         self.PI = 3.14
+#
+#     def area(self):
+#         return self.PI * math.pow(self.r, 2)
+#
+#     def perimeter(self):
+#         return 2 * self.PI * self.r
+#
+#
+# r = float(input())
+# c = Circle(r)
+# print(c.area(), c.perimeter(), sep=" ")
+
+
+# # 87
+# # 唯一子集
+# from math import pow
+#
+#
+# class A:
+#     def __init__(self, _s):
+#         self.s = _s
+#
+#     def fun(self):
+#         Len = len(self.s)
+#         ll = []
+#         for ii in range(0, int(pow(Len, 2) - 1)):
+#             lll = []
+#             for j in range(Len):
+#                 if (ii >> j) % 2:
+#                     lll.append(self.s[Len - j - 1])
+#             lll.sort()
+#             ll.append(lll)
+#         if ll[-1] != self.s:
+#             ll.append(self.s)
+#         return ll
+#
+#
+# x = input()
+# l1 = x.split()
+# for i in range(0, len(l1)):  # 变为int
+#     l1[i] = int(l1[i])
+#
+# s1 = set(l1)
+# l1 = list(s1)  # 去重
+# l1.sort(reverse=False)  # 排序
+# a = A(l1)
+# print(a.fun())
+
+# l1.sort(reverse=True)  # 排序
+# print(l1)
+# a = A(l1)
+# print(a.fun())
+
+# # 88
+# # 特定目标
+# class A:
+#     def __init__(self, _s):
+#         self.s = _s
+#
+#     def fun(self, n):
+#         for i in range(0, len(self.s)):
+#             isTrue = False
+#             for j in range(0, len(self.s)):
+#                 if i == j:
+#                     break
+#                 else:
+#                     if self.s[i] + self.s[j] == n:
+#                         print(self.s[j], "+", self.s[i], "=", n, sep=" ")
+#                         isTrue = True
+#                         break
+#             if isTrue:
+#                 break
+#
+#
+# x = input()
+# l1 = x.split()
+# num = int(input())
+# for i in range(0, len(l1)):
+#     l1[i] = int(l1[i])
+# a = A(l1)
+# a.fun(num)
+
+
+# # 89
+# # 反向字符串
+# class A:
+#     def __init__(self, _s):
+#         self.s = _s
+#
+#     def fun(self):
+#         l1 = self.s
+#         l1.reverse()
+#         ll = []
+#         for i in range(0, len(l1)):
+#             s = ""
+#             s = l1[i]
+#             ll.append(s)
+#         return ll
+#
+#
+# x = input()
+# l1 = x.split()
+# a = A(l1)
+# l1 = a.fun()
+# for i in range(0, len(l1)):
+#     print(l1[i], end=" ")
+
+
+# # 90
+# # Pow方法
+# class A:
+#     def __init__(self, _x):
+#         self.x = _x
+#
+#     def fun(self, n):
+#         ret = 1
+#         isTrue = False
+#         if n < 0:
+#             n = abs(n)
+#             isTrue = True
+#         if n > 0:
+#             while n > 1:
+#                 if n & 1 == 1:
+#                     ret *= self.x
+#                 self.x *= self.x
+#                 n = n >> 1
+#             if isTrue:
+#                 return 1 / (ret * self.x)
+#             return ret * self.x
+#         elif n == 0:
+#             return 1
+#
+#     def fun1(self, n, l):
+#         ret = 1
+#         isTrue = False
+#         if n < 0:
+#             n = abs(n)
+#             isTrue = True
+#         if n > 0:
+#             while n > 1:
+#                 if n & 1 == 1:
+#                     ret *= self.x
+#                 self.x *= self.x
+#                 n = n >> 1
+#             if isTrue:
+#                 r = 1 / (ret * self.x)
+#             r = ret * self.x
+#         elif n == 0:
+#             r = 1
+#         return r % l
+#
+#
+# s = input()
+# x, num = map(int, s.split())
+# a = A(x)
+# print(a.fun(num))
