@@ -104,3 +104,55 @@
 #             ll[i] = l[0]
 # x = "".join(ll)   # join只接收str类型参数，不能传数字
 # print(x)
+
+
+# # 57
+# # 同义词
+# import re
+#
+# while True:
+#     x = input()
+#     if x == '':
+#         break
+#     pattern = re.compile(r'not *[a-z]* *poor')
+#     x1 = pattern.sub('good', x)
+#     print(x1)
+
+
+# # 58
+# # 提取字符串
+# while True:
+#     x = input()
+#     if x == "":
+#         break
+#     if len(x) < 2:
+#         print(x)
+#     else:
+#         y = x[0:2] + x[-2:]
+#         print(y)
+
+
+# # 59
+# # 删除字符
+# while True:
+#     x = input()
+#     if x == "":
+#         break
+#     l1 = []
+#     for i in range(0, len(x)):
+#         l1.append(x[i])
+#     l2 = []
+#     for i in range(0,len(l1)):
+#         if i % 2 == 0:
+#             l2.append(l1[i])
+#     s = "".join(l2)
+#     print(s)
+
+
+# # 60
+# # 单词
+# x = input()
+# l = x.split()
+# l.sort(key=len)
+# print(l[0])
+# print(l[-1])
