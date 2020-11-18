@@ -140,3 +140,24 @@
 #     else:
 #         num -= 4
 #         print(fun2(num))
+
+
+# 36
+# 吃糖果
+def F(n):
+    a = 1
+    b = 2
+    if n == 1 or n == 2:
+        return n
+    else:
+        for i in range(n - 2):
+            c = a + b
+            a = b
+            b = c
+        return c
+
+
+n = int(input())
+while n > 0:
+    print(F(n))
+    n = int(input())
