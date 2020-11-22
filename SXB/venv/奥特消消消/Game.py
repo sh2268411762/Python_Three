@@ -12,7 +12,7 @@ from config import *
 def main():
 	pygame.init()
 	screen = pygame.display.set_mode((WIDTH, HEIGHT))
-	pygame.display.set_caption('Python版开心消消乐')
+	pygame.display.set_caption('奥特消消消')
 	# 加载背景音乐
 	pygame.mixer.init()
 	pygame.mixer.music.load(os.path.join(ROOTDIR, "resources/audios/bg.mp3"))
