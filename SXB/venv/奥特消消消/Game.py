@@ -66,6 +66,8 @@ def main():
 		game.reset()
 
 
+
 '''test'''
 if __name__ == '__main__':
 	main()
+
