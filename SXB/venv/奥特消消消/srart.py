@@ -8,6 +8,7 @@ from tkinter import *
 from tkinter.font import Font
 from tkinter.ttk import *
 from tkinter.messagebox import *
+from Game import *
 
 # 创建对象的基类
 Base = declarative_base()
@@ -22,7 +23,6 @@ class User(Base):
     name = Column(String(20))
     password = Column(String(20))
     boun = Column(Integer())
-
 
 
 # 初始化数据库连接
@@ -88,6 +88,9 @@ class Application_ZC(Application_zc):
         else:
             tkinter.messagebox.showinfo("注册", "注册成功，进入游戏！")
             print(n + "进入游戏")
+            global top
+            top.destroy()
+            main()
         newPlayer = User(name=n, password=p)
         # 添加到session
         session.add(newPlayer)
@@ -163,6 +166,10 @@ class Application(Application_ui):
             print(ret.name + "进入游戏")
             if ret.password == p:
                 tkinter.messagebox.showinfo("登录", "登录成功！")
+                global top
+                top.destroy()
+                ret = main()
+                print(ret)
             else:
                 tkinter.messagebox.showinfo("登录", "登录失败，请检查密码！")
         else:
@@ -171,7 +178,7 @@ class Application(Application_ui):
         session.close()
 
 
+'''test'''
 if __name__ == "__main__":
     top = Tk()
     Application(top).mainloop()
-    top.destroy()

@@ -8,6 +8,7 @@ from utils import *
 from config import *
 
 
+
 '''游戏主程序'''
 def main():
 	pygame.init()
@@ -33,6 +34,7 @@ def main():
 		gem_imgs.append(os.path.join(ROOTDIR, 'resources/images/gem%s.png' % i))
 	# 主循环
 	game = gemGame(screen, sounds, font, gem_imgs)
+	ret = 0
 	while True:
 		score = game.start()
 		flag = False
@@ -48,6 +50,8 @@ def main():
 				break
 			screen.fill((135, 206, 235))
 			text0 = 'Final score: %s' % score
+			if score > ret:
+				ret = score
 			text1 = 'Press <R> to restart the game.'
 			text2 = 'Press <Esc> to quit the game.'
 			y = 150
@@ -67,7 +71,7 @@ def main():
 
 
 
-'''test'''
-if __name__ == '__main__':
-	main()
+# '''test'''
+# if __name__ == '__main__':
+# 	main()
 
