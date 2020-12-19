@@ -1,7 +1,3 @@
-'''
-Function:
-	连连看小游戏配置文件
-'''
 import os
 
 
