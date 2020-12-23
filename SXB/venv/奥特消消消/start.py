@@ -168,8 +168,7 @@ class Application(Application_ui):
                 tkinter.messagebox.showinfo("登录", "登录成功！")
                 global top
                 top.destroy()
-                ret = main()
-                print(ret)
+                main()
             else:
                 tkinter.messagebox.showinfo("登录", "登录失败，请检查密码！")
         else:
