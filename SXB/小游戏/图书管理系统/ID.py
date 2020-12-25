@@ -63,7 +63,7 @@ def id_write(a):  # 写入（注册）账号
         confirm = reader.entry_confirm.get()
 
     sql0 = "SELECT id FROM user WHERE id='%s' AND job='%s'" % (id, a)
-    sql1 = "INSERT INTO user VALUES (%s,%s,%s) " % (id, password, a)
+    sql1 = r"INSERT INTO user VALUES ('%s','%s','%s') " % (id, password, a)
     # 首先检查两次输入的密码是否一致，一致后再检查注册的账号是否已经存在
     if password == confirm:
         cursor.execute(sql0)

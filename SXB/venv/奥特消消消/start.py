@@ -150,7 +150,7 @@ class Application(Application_ui):
         # TODO, Please finish the function here!
         top1 = Tk()
         Application_ZC(top1).mainloop()
-        top1.destroy()
+        top.destroy()
 
     def Command2_Cmd(self, event=None):
         # TODO, Please finish the function here!

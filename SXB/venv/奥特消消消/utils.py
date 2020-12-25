@@ -175,7 +175,7 @@ class gemGame():
         # 拼出一个的奖励
         self.reward = 10
         # 时间
-        self.remaining_time = 300
+        self.remaining_time = 20
 
     '''显示剩余时间'''
 
